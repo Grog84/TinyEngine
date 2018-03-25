@@ -24,6 +24,9 @@
     <ClInclude Include="Window.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -33,6 +36,9 @@
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
