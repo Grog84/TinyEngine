@@ -13,16 +13,16 @@
 *.userprefs
 
 # Build results
-TinyEngine/[Dd]ebug/
-TinyEngine/[Dd]ebugPublic/
-TinyEngine/[Rr]elease/
-TinyEngine/[Rr]eleases/
-TinyEngine/x64/
-TinyEngine/x86/
-TinyEngine/bld/
-TinyEngine/[Bb]in/
-TinyEngine/[Oo]bj/
-TinyEngine/[Ll]og/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
 
 # Visual Studio 2015/2017 cache/options directory
 TinyEngine/.vs/
@@ -33,25 +33,25 @@ TinyEngine/.vs/
 TinyEngine/Generated\ Files/
 
 # MSTest test Results
-TinyEngine/[Tt]est[Rr]esult*/
-TinyEngine/[Bb]uild[Ll]og.*
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 
 # NUNIT
 *.VisualState.xml
 TinyEngine/TestResult.xml
 
 # Build Results of an ATL Project
-TinyEngine/[Dd]ebugPS/
-TinyEngine/[Rr]eleasePS/
-TinyEngine/dlldata.c
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
 
 # Benchmark Results
-TinyEngine/BenchmarkDotNet.Artifacts/
+BenchmarkDotNet.Artifacts/
 
 # .NET Core
-TinyEngine/project.lock.json
-TinyEngine/project.fragment.lock.json
-TinyEngine/artifacts/
+project.lock.json
+project.fragment.lock.json
+artifacts/
 **/Properties/launchSettings.json
 
 # StyleCop
