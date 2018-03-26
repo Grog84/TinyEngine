@@ -19,6 +19,7 @@ Window::Window(const std::string & winName, unsigned int x, unsigned int y, int 
 	Height	= height;
 
 	Size = std::pair< int, int >(Width, Height);
+
 	
 }
 

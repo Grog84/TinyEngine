@@ -21,4 +21,5 @@ private:
 	std::pair< int, int > Size;
 
 	SDL_Window * SdlWindow;
+	SDL_Surface * SdlSurface;
 };
