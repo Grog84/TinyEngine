@@ -18,7 +18,7 @@ public:
 	inline float magnitude() const;
 	inline float sq_magnitude() const;
 
-	inline Vector3 UnitVector();
+	inline void Normalize();
 
 	inline const Vector3& operator+() const;
 	inline const Vector3& operator-() const;
@@ -26,23 +26,12 @@ public:
 	inline float operator[](int i) const;
 	inline float& operator[](int i);
 
-	/*inline Vector3 operator+(const Vector3 &other) const;
-	inline Vector3 operator-(const Vector3 &other) const;
-	inline Vector3 operator*(const Vector3 &other) const;
-	inline Vector3 operator/(const Vector3 &other) const;*/
-
-	/*inline Vector3 operator*(const float val) const;
-	inline Vector3 operator/(const float val) const;*/
-
 	inline Vector3& operator+=(const Vector3 &other);
 	inline Vector3& operator-=(const Vector3 &other);
 	inline Vector3& operator*=(const Vector3 &other);
 	inline Vector3& operator/=(const Vector3 &other);
 	inline Vector3& operator*=(const float val);
 	inline Vector3& operator/=(const float val);
-
-	/*inline float dot(const Vector3 &other);
-	inline Vector3 cross(const Vector3 &other);*/
 
 	inline std::ostream& operator<<(std::ostream &os);
 
@@ -88,7 +77,6 @@ inline Vector3 operator/(const Vector3 & v1, float val)
 }
 
 
-
 inline float dot(const Vector3 & v1, const Vector3 & v2)
 {
 	return (v1.e[0] * v2.e[0] + v1.e[1] * v2.e[1] + v1.e[2] * v2.e[2]);
@@ -99,4 +87,9 @@ inline Vector3 cross(const Vector3 & v1, const Vector3 & v2)
 	return Vector3((v1.e[1] * v2.e[2] - v1.e[2] * v2.e[1]),
 		(-(v1.e[0] * v2.e[2] - v1.e[2] * v2.e[0])),
 		(v1.e[0] * v2.e[1] - v1.e[1] * v2.e[0]));
+}
+
+inline Vector3 UnitVector(Vector3 v1)
+{
+	return v1 / v1.magnitude();
 }

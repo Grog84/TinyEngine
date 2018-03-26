@@ -51,9 +51,12 @@ inline float Vector3::sq_magnitude() const
 	return (e[0]*e[0] + e[1]*e[1] + e[2]*e[2]);
 }
 
-inline Vector3 Vector3::UnitVector()
+inline void Vector3::Normalize()
 {
-	return (*this) / (this->magnitude());
+	float k = 1.0 / sqrt(e[0] * e[0] + e[1] * e[1] + e[2] * e[2]);
+	e[0] *= k;
+	e[1] *= k;
+	e[2] *= k;
 }
 
 inline const Vector3 & Vector3::operator+() const
