@@ -78,24 +78,24 @@ inline float & Vector3::operator[](int i)
 	return e[i];
 }
 
-inline Vector3 Vector3::operator+(const Vector3 & other)
+inline Vector3 Vector3::operator+(const Vector3 & other) const
 {
-	return Vector3(e[0] + other.x(), e[1] + other.y(), e[2] + other.z());
+	return Vector3(e[0] + other.e[0], e[1] + other.e[1], e[2] + other.e[2]);
 }
 
 inline Vector3 Vector3::operator-(const Vector3 & other) const
 {
-	return Vector3(e[0] - other.x(), e[1] - other.y(), e[2] - other.z());
+	return Vector3(e[0] - other.e[0], e[1] - other.e[1], e[2] - other.e[2]);
 }
 
 inline Vector3 Vector3::operator*(const Vector3 & other) const
 {
-	return Vector3(e[0] * other.x(), e[1] * other.y(), e[2] * other.z());
+	return Vector3(e[0] * other.e[0], e[1] * other.e[1], e[2] * other.e[2]);
 }
 
 inline Vector3 Vector3::operator/(const Vector3 & other) const
 {
-	return Vector3(e[0] / other.x(), e[1] / other.y(), e[2] / other.z());
+	return Vector3(e[0] / other.e[0], e[1] / other.e[1], e[2] / other.e[2]);
 }
 
 inline Vector3 Vector3::operator*(const float val) const
@@ -110,33 +110,33 @@ inline Vector3 Vector3::operator/(const float val) const
 
 inline Vector3 & Vector3::operator+=(const Vector3 & other)
 {
-	e[0] += other.x();
-	e[1] += other.y();
-	e[2] += other.z();
+	e[0] += other.e[0];
+	e[1] += other.e[1];
+	e[2] += other.e[2];
 	return *this;
 }
 
 inline Vector3 & Vector3::operator-=(const Vector3 & other)
 {
-	e[0] -= other.x();
-	e[1] -= other.y();
-	e[2] -= other.z();
+	e[0] -= other.e[0];
+	e[1] -= other.e[1];
+	e[2] -= other.e[2];
 	return *this;
 }
 
 inline Vector3 & Vector3::operator*=(const Vector3 & other)
 {
-	e[0] *= other.x();
-	e[1] *= other.y();
-	e[2] *= other.z();
+	e[0] *= other.e[0];
+	e[1] *= other.e[1];
+	e[2] *= other.e[2];
 	return *this;
 }
 
 inline Vector3 & Vector3::operator/=(const Vector3 & other)
 {
-	e[0] /= other.x();
-	e[1] /= other.y();
-	e[2] /= other.z();
+	e[0] /= other.e[0];
+	e[1] /= other.e[1];
+	e[2] /= other.e[2];
 	return *this;
 }
 
@@ -158,14 +158,14 @@ inline Vector3 & Vector3::operator/=(const float val)
 
 inline float Vector3::dot(const Vector3 & other)
 {
-	return (e[0]*other.x() + e[1]*other.y() + e[2]*other.z());
+	return (e[0]*other.e[0] + e[1]*other.e[1] + e[2]*other.e[2]);
 }
 
 inline Vector3 Vector3::cross(const Vector3 & other)
 {
-	return Vector3(	(e[1]*other.z() - e[2]*other.y()),
-				  (-(e[0]*other.z() - e[2]*other.x())),
-					(e[0]*other.y() - e[1]*other.x()));
+	return Vector3(	(e[1]*other.e[2] - e[2]*other.e[1]),
+				  (-(e[0]*other.e[2] - e[2]*other.e[0])),
+					(e[0]*other.e[1] - e[1]*other.e[0]));
 }
 
 inline std::ostream & Vector3::operator<<(std::ostream & os)

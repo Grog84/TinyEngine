@@ -26,7 +26,7 @@ public:
 	inline float operator[](int i) const;
 	inline float& operator[](int i);
 
-	inline Vector3 operator+(const Vector3 &other);
+	inline Vector3 operator+(const Vector3 &other) const;
 	inline Vector3 operator-(const Vector3 &other) const;
 	inline Vector3 operator*(const Vector3 &other) const;
 	inline Vector3 operator/(const Vector3 &other) const;
@@ -48,7 +48,6 @@ public:
 
 	~Vector3();
 
-private:
 	float e[3];
 };
 
