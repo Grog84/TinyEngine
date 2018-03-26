@@ -78,36 +78,6 @@ inline float & Vector3::operator[](int i)
 	return e[i];
 }
 
-inline Vector3 Vector3::operator+(const Vector3 & other) const
-{
-	return Vector3(e[0] + other.e[0], e[1] + other.e[1], e[2] + other.e[2]);
-}
-
-inline Vector3 Vector3::operator-(const Vector3 & other) const
-{
-	return Vector3(e[0] - other.e[0], e[1] - other.e[1], e[2] - other.e[2]);
-}
-
-inline Vector3 Vector3::operator*(const Vector3 & other) const
-{
-	return Vector3(e[0] * other.e[0], e[1] * other.e[1], e[2] * other.e[2]);
-}
-
-inline Vector3 Vector3::operator/(const Vector3 & other) const
-{
-	return Vector3(e[0] / other.e[0], e[1] / other.e[1], e[2] / other.e[2]);
-}
-
-inline Vector3 Vector3::operator*(const float val) const
-{
-	return Vector3(e[0] * val, e[1] * val, e[2] * val);
-}
-
-inline Vector3 Vector3::operator/(const float val) const
-{
-	return Vector3(e[0] / val, e[1] / val, e[2] / val);
-}
-
 inline Vector3 & Vector3::operator+=(const Vector3 & other)
 {
 	e[0] += other.e[0];
@@ -156,18 +126,6 @@ inline Vector3 & Vector3::operator/=(const float val)
 	return *this;
 }
 
-inline float Vector3::dot(const Vector3 & other)
-{
-	return (e[0]*other.e[0] + e[1]*other.e[1] + e[2]*other.e[2]);
-}
-
-inline Vector3 Vector3::cross(const Vector3 & other)
-{
-	return Vector3(	(e[1]*other.e[2] - e[2]*other.e[1]),
-				  (-(e[0]*other.e[2] - e[2]*other.e[0])),
-					(e[0]*other.e[1] - e[1]*other.e[0]));
-}
-
 inline std::ostream & Vector3::operator<<(std::ostream & os)
 {
 	os << e[0] << " " << e[1] << " " << e[2];
@@ -177,3 +135,9 @@ inline std::ostream & Vector3::operator<<(std::ostream & os)
 Vector3::~Vector3()
 {
 }
+
+
+
+
+
+

@@ -20,12 +20,18 @@ Window::Window(const std::string & winName, unsigned int x, unsigned int y, int 
 
 	Size = std::pair< int, int >(Width, Height);
 
+	Surface = SDL_GetWindowSurface(SdlWindow);
 	
 }
 
 const std::pair<int, int>& Window::GetSize() const
 {
 	return Size;
+}
+
+void Window::InitializeSurface()
+{
+	SDL_FillRect(Surface, NULL, SDL_MapRGB(Surface->format, 0, 0, 0));
 }
 
 

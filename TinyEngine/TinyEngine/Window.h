@@ -11,6 +11,8 @@ public:
 
 	const std::pair< int, int > & GetSize() const;
 
+	void InitializeSurface();
+
 	~Window();
 
 private:
@@ -21,5 +23,5 @@ private:
 	std::pair< int, int > Size;
 
 	SDL_Window * SdlWindow;
-	SDL_Surface * SdlSurface;
+	SDL_Surface * Surface;
 };

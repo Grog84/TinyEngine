@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Ray.h"
 
-
 Ray::Ray()
 {
 }
@@ -24,7 +23,7 @@ inline Vector3 Ray::GetDirection() const
 
 Vector3 Ray::PointAtPosition(float t) const
 {
-	return Origin + Direction*t;
+	return Origin + t*Direction;
 }
 
 
