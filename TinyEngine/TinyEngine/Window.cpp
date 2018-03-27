@@ -22,6 +22,7 @@ Window::Window(const std::string & winName, unsigned int x, unsigned int y, int 
 
 	Surface = SDL_GetWindowSurface(SdlWindow);
 	
+	isSurfaceLocked = false;
 }
 
 const std::pair<int, int>& Window::GetSize() const
@@ -32,6 +33,39 @@ const std::pair<int, int>& Window::GetSize() const
 void Window::InitializeSurface()
 {
 	SDL_FillRect(Surface, NULL, SDL_MapRGB(Surface->format, 0, 0, 0));
+}
+
+void Window::LockSurface()
+{
+	SDL_LockSurface(Surface);
+	isSurfaceLocked = true;
+}
+
+void Window::UnlockSurface()
+{
+	SDL_UnlockSurface(Surface);
+	isSurfaceLocked = false;
+}
+
+Pixel * Window::GetSurfacePixels()
+{
+	if (!isSurfaceLocked)
+	{
+		std::cout << "Surface not Locked!" << std::endl;
+		std::cout << "I'm Locking it for you!" << std::endl;
+		LockSurface();
+	}
+	return static_cast<Pixel *>(Surface->pixels);
+}
+
+void Window::ClearSurface()
+{
+	SDL_FreeSurface(Surface);
+}
+
+void Window::UpdateSurface()
+{
+	SDL_UpdateWindowSurface(SdlWindow);
 }
 
 

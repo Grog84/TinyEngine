@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <utility>
 #include <string>
+#include "Pixel.h"
 
 class Window
 {
@@ -12,6 +13,17 @@ public:
 	const std::pair< int, int > & GetSize() const;
 
 	void InitializeSurface();
+
+
+	// Window surface related methods
+
+	void LockSurface();
+	void UnlockSurface();
+
+	Pixel * GetSurfacePixels();   // not const since it could lock the surface
+	
+	void ClearSurface();
+	void UpdateSurface();
 
 	~Window();
 
@@ -24,4 +36,6 @@ private:
 
 	SDL_Window * SdlWindow;
 	SDL_Surface * Surface;
+
+	bool isSurfaceLocked;
 };
