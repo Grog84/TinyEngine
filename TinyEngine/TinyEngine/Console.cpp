@@ -28,9 +28,12 @@ public:
 private:
 	bool				AddCommand(const std::string & Cmd, void(*Function)(), const std::string & Description);
 	
-	// Commands Definition
+
+	//============================
+	
 	void				ListCommands();
 
+	//============================
 
 	_CmdMap				Commands;
 };
