@@ -39,6 +39,12 @@
     <ClInclude Include="Vector4.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="CmdSystem.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdArgs.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -63,6 +69,12 @@
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="Vector4.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdSystem.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdArgs.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>

@@ -72,9 +72,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\include;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\lib\x64;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\include;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\lib\x64;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -95,7 +99,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Lib\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -111,7 +115,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Lib\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -149,6 +153,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CmdArgs.h" />
+    <ClInclude Include="CmdSystem.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Pixel.h" />
     <ClInclude Include="Ray.h" />
@@ -159,6 +165,8 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CmdArgs.cpp" />
+    <ClCompile Include="CmdSystem.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Pixel.cpp" />
     <ClCompile Include="Ray.cpp" />

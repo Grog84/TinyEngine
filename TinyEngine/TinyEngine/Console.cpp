@@ -1,24 +1,19 @@
 #include "stdafx.h"
 #include "Console.h"
 #include <map>
+#include <SDL_ttf.h>
+#include <SDL_image.h>
 
-class idConsoleLocal : public idConsole
+class ConsoleLocal : public Console
 {
 public:
-	virtual	void		Init(void);
+	virtual void		Init(void);
 	virtual void		Shutdown(void);
 
+	virtual void		Draw(bool forceFullScreen);
+	virtual void		Print(const char *text);
 
-	virtual	bool		ProcessCommand(const std::string & Cmd) const;
-	virtual bool		AddCommand(const std::string & Cmd, void(*Function)(), const std::string & Description);
-
-	_CmdMapIter			GetCommandsIterBegin() const;
-	_CmdMapIter			GetCommandsIterEnd() const;
-
-private:
-	void				ListCommands();
-
-	//============================
-
-	_CmdMap				Commands;
 };
+
+static ConsoleLocal localConsole;
+Console	*console = &localConsole;
