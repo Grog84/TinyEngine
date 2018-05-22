@@ -3,7 +3,7 @@
 #include <map>
 #include "CmdArgs.h"
 
-//  CommandFunction -> void(*Function)()
+typedef void(*CommandFunction)(const CmdArgs &args);
 
 class CmdSystem
 {
@@ -14,7 +14,7 @@ public:
 
 	virtual bool	ProcessCommand(const std::string & Cmd) const = 0;
 
-	virtual bool	AddCommand(const std::string & Cmd, CommandFunction, const std::string & Description) = 0;
+	virtual bool	AddCommand(const std::string & Cmd, CommandFunction CmdFunction, const std::string & Description) = 0;
 	virtual bool	RemoveCommand(const std::string & Cmd) = 0;	
 	
 };

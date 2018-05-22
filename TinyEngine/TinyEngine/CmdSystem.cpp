@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cassert>
 
-typedef void(*CommandFunction)(const CmdArgs &args);
+
 
 struct CommandDefinition
 {

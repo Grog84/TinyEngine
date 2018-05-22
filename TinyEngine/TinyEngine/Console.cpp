@@ -17,3 +17,19 @@ public:
 
 static ConsoleLocal localConsole;
 Console	*console = &localConsole;
+
+void ConsoleLocal::Init(void)
+{
+}
+
+void ConsoleLocal::Shutdown(void)
+{
+}
+
+void ConsoleLocal::Draw(bool forceFullScreen)
+{
+}
+
+void ConsoleLocal::Print(const char * text)
+{
+}

@@ -20,7 +20,7 @@ void Texture::LoadFromFile(const std::string & path)
 
 	SDL_Texture * NewTexture = nullptr;
 
-	SDL_Surface * LoadedSurface = IMG_Load(path.c_str);
+	SDL_Surface * LoadedSurface = IMG_Load(path.c_str());
 
 	if (LoadedSurface == NULL)
 	{
@@ -29,7 +29,7 @@ void Texture::LoadFromFile(const std::string & path)
 	else
 	{
 		//Color key image
-		SDL_SetColorKey(LoadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0, 0xFF, 0xFF));
+		// SDL_SetColorKey(LoadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0, 0xFF, 0xFF));
 	}
 }
 
@@ -44,4 +44,5 @@ void Texture::RenderPoint(int x, int y) const
 std::pair<int, int>& Texture::GetSize()
 {
 	// TODO: inserire l'istruzione return qui
+	return Size;
 }

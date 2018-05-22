@@ -72,13 +72,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\include;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\lib\x64;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Lib\SDL2_image\include;$(SolutionDir)Lib\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Lib\SDL2_image\lib\x64;$(SolutionDir)Lib\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\include;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_image\lib\x64;C:\Users\grolg\Documents\CppProjects\TinyEngine\TinyEngine\Lib\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Lib\SDL2_image\include;$(SolutionDir)Lib\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Lib\SDL2_image\lib\x64;$(SolutionDir)Lib\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -93,7 +93,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Lib\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Lib\SDL2\include;$(SolutionDir)Lib\SDL2_image\include;$(SolutionDir)Lib\SDL2_ttf\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +109,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Lib\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Lib\SDL2\include;$(SolutionDir)Lib\SDL2_image\include;$(SolutionDir)Lib\SDL2_ttf\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
