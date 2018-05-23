@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <map>
 #include "Vector3.h"
 
 class Actor
@@ -9,17 +10,14 @@ public:
 	Actor();
 	~Actor();
 
-	void SetPosition(const Vector3& newSize);
+	void SetPosition(const Vector3& NewPosition);
 	const Vector3& GetPosition() const;
 
-	void SetRotation(const Vector3& newSize);
+	void SetRotation(const Vector3& NewRotation);
 	const Vector3& GetRotation() const;
 
-	void SetSize(const Vector3& newSize);
+	void SetSize(const Vector3& NewSize);
 	const Vector3& GetSize() const;
-
-	void MoveTo(const Vector3 & NewPosition);
-	void RotateTo(const Vector3 & NewRotation);
 
 	void Tag(const std::string & NewTag);
 	void UnTag(const std::string & OldTag);
@@ -43,7 +41,10 @@ protected:
 	Vector3 _Size;
 
 	std::string _Name;
+	static std::map<std::string, Actor*> _NameList;
+	
 	std::string * _Tags;
+
 
 
 };

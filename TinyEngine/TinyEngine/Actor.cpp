@@ -4,6 +4,9 @@
 
 Actor::Actor()
 { 
+	SetPosition(Vector3(0, 0, 0));
+	SetRotation(Vector3(0, 0, 0));
+	SetSize(Vector3(0, 0, 0));
 }
 
 
@@ -11,8 +14,9 @@ Actor::~Actor()
 {
 }
 
-void Actor::SetPosition(const Vector3 & newSize)
+void Actor::SetPosition(const Vector3 & NewPosition)
 {
+	_Position = NewPosition;
 }
 
 const Vector3 & Actor::GetPosition() const
@@ -20,8 +24,9 @@ const Vector3 & Actor::GetPosition() const
 	// TODO: insert return statement here
 }
 
-void Actor::SetRotation(const Vector3 & newSize)
+void Actor::SetRotation(const Vector3 & NewRotation)
 {
+	_Rotation = NewRotation;
 }
 
 const Vector3 & Actor::GetRotation() const
@@ -29,21 +34,14 @@ const Vector3 & Actor::GetRotation() const
 	// TODO: insert return statement here
 }
 
-void Actor::SetSize(const Vector3 & newSize)
+void Actor::SetSize(const Vector3 & NewSize)
 {
+	_Size = NewSize;
 }
 
 const Vector3 & Actor::GetSize() const
 {
 	// TODO: insert return statement here
-}
-
-void Actor::MoveTo(const Vector3 & NewPosition)
-{
-}
-
-void Actor::RotateTo(const Vector3 & NewRotation)
-{
 }
 
 void Actor::Tag(const std::string & NewTag)
@@ -61,7 +59,38 @@ const std::string * Actor::GetTags() const
 
 const std::string & Actor::SetName(std::string NewName)
 {
-	// TODO: insert return statement here
+	//overkill for sure, but who knows how many unique actors we'll need
+	static unsigned long long nameIndex = 0;
+
+	if (NewName.length == 0)
+	{
+		NewName = SetName("Actor");
+	}
+	else
+	{
+		NewName[0] = toupper(NewName[0]);
+		const Actor * preNamed = GetNamed(NewName);
+		if ((preNamed == nullptr) || (preNamed == this))
+		{
+			_Name = NewName;
+		}
+		else
+		{
+			_Name = NewName + std::to_string(++nameIndex);
+		}
+
+		
+		std::pair<std::map<std::string, Actor *>::iterator, bool> search = _NameList.insert(std::pair<std::string, Actor *>(_Name, this));
+		
+		if (!search.second)
+		{
+			printf("Failed to add to the Actor list the Actor with name: %s", _Name);
+		}
+
+
+	}
+
+	return _Name;
 }
 
 const std::string & Actor::GetName() const
