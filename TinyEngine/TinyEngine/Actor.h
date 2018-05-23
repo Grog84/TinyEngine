@@ -2,6 +2,7 @@
 
 #include <string>
 #include <map>
+#include <list>
 #include "Vector3.h"
 
 class Actor
@@ -21,7 +22,7 @@ public:
 
 	void Tag(const std::string & NewTag);
 	void UnTag(const std::string & OldTag);
-	const std::string * GetTags() const;
+	const std::list<std::string> & GetTags() const;
 
 	/*
 	* The name set is actually set might be different, but granted to be unique
@@ -43,7 +44,7 @@ protected:
 	std::string _Name;
 	static std::map<std::string, Actor*> _NameList;
 	
-	std::string * _Tags;
+	std::list<std::string> _Tags;
 
 
 

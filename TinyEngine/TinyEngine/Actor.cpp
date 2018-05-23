@@ -1,14 +1,13 @@
 #include "stdafx.h"
 #include "Actor.h"
 
-
 Actor::Actor()
 { 
 	SetPosition(Vector3(0, 0, 0));
 	SetRotation(Vector3(0, 0, 0));
 	SetSize(Vector3(0, 0, 0));
-}
 
+}
 
 Actor::~Actor()
 {
@@ -46,15 +45,40 @@ const Vector3 & Actor::GetSize() const
 
 void Actor::Tag(const std::string & NewTag)
 {
+	bool hasTag = false;
+	// std::vector<std::string>::iterator it;
+
+	for (auto it = _Tags.begin(); it != _Tags.end(); it++)
+	{
+		if (*it == NewTag)
+		{
+			hasTag = true;
+			break;
+		}
+	}
+
+	if (!hasTag)
+	{
+		_Tags.push_back(NewTag);
+	}
+
 }
 
 void Actor::UnTag(const std::string & OldTag)
 {
+	for (auto it = _Tags.begin(); it != _Tags.end(); it++)
+	{
+		if (*it == OldTag)
+		{
+			_Tags.erase(it);
+			break;
+		}
+	}
 }
 
-const std::string * Actor::GetTags() const
+const std::list<std::string> & Actor::GetTags() const
 {
-	return nullptr;
+	return _Tags;
 }
 
 const std::string & Actor::SetName(std::string NewName)
@@ -95,11 +119,17 @@ const std::string & Actor::SetName(std::string NewName)
 
 const std::string & Actor::GetName() const
 {
-	// TODO: insert return statement here
+	return _Name;
 }
 
-Actor * const Actor::GetNamed(const std::string & nameLookup)
+Actor * const Actor::GetNamed(const std::string & NameLookup)
 {
+	std::map<std::string, Actor*>::iterator it = _NameList.find(NameLookup);
+	if (it != _NameList.end())
+	{
+		return it->second;
+	}
+
 	return nullptr;
 }
 
