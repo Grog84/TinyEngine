@@ -11,6 +11,14 @@ Actor::Actor()
 
 Actor::~Actor()
 {
+	auto it = _Tags.begin();
+	while (it != _Tags.end())
+	{
+		UnTag(*it);
+		it++;
+	}
+
+	_NameList.erase(_Name);
 }
 
 void Actor::SetPosition(const Vector3 & NewPosition)
@@ -20,7 +28,7 @@ void Actor::SetPosition(const Vector3 & NewPosition)
 
 const Vector3 & Actor::GetPosition() const
 {
-	// TODO: insert return statement here
+	return _Position;
 }
 
 void Actor::SetRotation(const Vector3 & NewRotation)
@@ -30,7 +38,7 @@ void Actor::SetRotation(const Vector3 & NewRotation)
 
 const Vector3 & Actor::GetRotation() const
 {
-	// TODO: insert return statement here
+	return _Rotation;
 }
 
 void Actor::SetSize(const Vector3 & NewSize)
@@ -40,7 +48,7 @@ void Actor::SetSize(const Vector3 & NewSize)
 
 const Vector3 & Actor::GetSize() const
 {
-	// TODO: insert return statement here
+	return _Size;
 }
 
 void Actor::Tag(const std::string & NewTag)
