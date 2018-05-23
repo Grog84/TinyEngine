@@ -7,13 +7,13 @@
 class Window
 {
 public:
+
 	Window();
 	Window(const std::string & winName, unsigned int x, unsigned int y, int width, int height, Uint32 flags);
 
 	const std::pair< int, int > & GetSize() const;
 
 	void InitializeSurface();
-
 
 	// Window surface related methods
 
@@ -22,7 +22,7 @@ public:
 
 	Pixel * GetSurfacePixels();   // not const since it could lock the surface
 	
-	void ClearSurface();
+	void FreeSurface();
 	void UpdateSurface();
 
 	~Window();
@@ -34,8 +34,8 @@ private:
 
 	std::pair< int, int > Size;
 
-	SDL_Window * SdlWindow;
-	SDL_Surface * Surface;
+	SDL_Window		* SdlWindow;
+	SDL_Surface		* Surface;
 
 	bool isSurfaceLocked;
 };

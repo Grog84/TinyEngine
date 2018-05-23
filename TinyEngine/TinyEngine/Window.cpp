@@ -58,7 +58,7 @@ Pixel * Window::GetSurfacePixels()
 	return static_cast<Pixel *>(Surface->pixels);
 }
 
-void Window::ClearSurface()
+void Window::FreeSurface()
 {
 	SDL_FreeSurface(Surface);
 }
