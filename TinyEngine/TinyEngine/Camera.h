@@ -2,10 +2,11 @@
 
 #include "Vector3.h"
 #include "Texture.h"
+#include "Actor.h"
 
 enum CameraMode { OPENGL, RAYTRACING };
 
-class Camera
+class Camera : Actor
 {
 public:
 
@@ -14,19 +15,12 @@ public:
 
 	~Camera();
 
-	void Render();
-
 	void InitializeRenderer();
-
-	const Vector3 & GetCameraCenter() const;
-	void SetCameraCenter(Vector3 & Position);
 
 	void SetRenderingTarget(Texture & RenderingTarget);
 
 
 protected:
-
-	Vector3 CameraCenter;
 	
 	Texture			* RenderView;
 	SDL_Renderer	* Renderer;
